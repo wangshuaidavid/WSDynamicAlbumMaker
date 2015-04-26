@@ -25,18 +25,18 @@ public class WSDynamicAlbumMaker {
     
     
     public func createDynamicAlbum (#videoURL: NSURL, renderLayer:CALayer, duration: Float, completionBlock: WSDynamicAlbumMakerExportCompletionBlock!) {
-        self.goCreateDynamicAlbum(videoURL: videoURL, audioURL: nil, renderLayer: renderLayer, duration: duration, completionBlock: completionBlock, isSaveToPhotosAlbum: false)
+        self.goCreateDynamicAlbum(videoURL: videoURL, audioURL: nil, renderLayer: renderLayer, duration: duration, isSaveToPhotosAlbum: false, completionBlock: completionBlock)
     }
     
     
     public func createDynamicAlbum (#videoURL: NSURL, audioURL: NSURL!, renderLayer:CALayer, duration: Float, completionBlock: WSDynamicAlbumMakerExportCompletionBlock!) {
-        self.goCreateDynamicAlbum(videoURL: videoURL, audioURL: audioURL, renderLayer: renderLayer, duration: duration, completionBlock: completionBlock, isSaveToPhotosAlbum: false)
+        self.goCreateDynamicAlbum(videoURL: videoURL, audioURL: audioURL, renderLayer: renderLayer, duration: duration, isSaveToPhotosAlbum: false, completionBlock: completionBlock)
     }
     
     
-    public func createDynamicAlbum (#videoURL: NSURL, audioURL: NSURL!, renderLayer:CALayer, duration: Float, completionBlock: WSDynamicAlbumMakerExportCompletionBlock!, isSaveToPhotosAlbum: Bool) {
+    public func createDynamicAlbum (#videoURL: NSURL, audioURL: NSURL!, renderLayer:CALayer, duration: Float, isSaveToPhotosAlbum: Bool, completionBlock: WSDynamicAlbumMakerExportCompletionBlock!) {
         
-        self.goCreateDynamicAlbum(videoURL: videoURL, audioURL: audioURL, renderLayer: renderLayer, duration: duration, completionBlock: completionBlock, isSaveToPhotosAlbum: isSaveToPhotosAlbum)
+        self.goCreateDynamicAlbum(videoURL: videoURL, audioURL: audioURL, renderLayer: renderLayer, duration: duration, isSaveToPhotosAlbum: isSaveToPhotosAlbum, completionBlock: completionBlock)
     }
     
 }
@@ -88,7 +88,7 @@ extension WSDynamicAlbumMaker {
 extension WSDynamicAlbumMaker {
     
     
-    private func goCreateDynamicAlbum (#videoURL: NSURL, audioURL: NSURL!, renderLayer:CALayer, duration: Float, completionBlock: WSDynamicAlbumMakerExportCompletionBlock!, isSaveToPhotosAlbum: Bool) {
+    private func goCreateDynamicAlbum (#videoURL: NSURL, audioURL: NSURL!, renderLayer:CALayer, duration: Float, isSaveToPhotosAlbum: Bool, completionBlock: WSDynamicAlbumMakerExportCompletionBlock!) {
         
         
         // 0 - Get AVAsset from NSURL
